@@ -2,4 +2,13 @@
 
 Day 1: Initial FastAPI Setup
 
-Created a simple FastAPI app and tested on localhost.
+## Tech Stack
+- Python
+- FastAPI
+- Uvicorn
+
+## How to Run
+
+```bash
+uvicorn main:app --reload
+
