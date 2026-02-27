@@ -19,7 +19,11 @@ def get_db():
 # CREATE
 @app.post("/items", response_model=schemas.ItemResponse)
 def create_item(item: schemas.ItemCreate, db: Session = Depends(get_db)):
-    db_item = models.ItemModel(name=item.name, price=item.price)
+    db_item = models.ItemModel(
+        name=item.name,
+        description=item.description,
+        price=item.price
+    )
     db.add(db_item)
     db.commit()
     db.refresh(db_item)
