@@ -5,6 +5,7 @@ import schemas
 from database import engine, SessionLocal
 
 # Create tables
+models.Base.metadata.drop_all(bind=engine)
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
